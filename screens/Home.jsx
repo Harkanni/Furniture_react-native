@@ -1,11 +1,12 @@
-import { TouchableOpacity, Text, View, SafeAreaView } from 'react-native'
+import { TouchableOpacity, Text, View, SafeAreaView, ScrollView } from 'react-native'
 import React from 'react'
 import { StatusBar } from 'react-native'
 import styles from './home.styles'
 import { Ionicons, Fontisto } from "@expo/vector-icons"
-import { ScrollView } from 'react-native-gesture-handler'
 import { Welcome } from '../components/home'
-
+import Carousel from '../components/home/Carousel'
+import Heading from '../components/home/heading'
+import ProductRow from '../components/products/ProductRow'
 const Home = () => {
   return (
     <SafeAreaView style={styles.container}>
@@ -26,6 +27,9 @@ const Home = () => {
 
       <ScrollView>
          <Welcome />
+         <Carousel />
+         <Heading />
+         <ProductRow />
       </ScrollView>
     </SafeAreaView>
   )
