@@ -3,9 +3,7 @@ import React from 'react'
 import { StatusBar } from 'react-native'
 import styles from './home.styles'
 import { Ionicons, Fontisto } from "@expo/vector-icons"
-import { Welcome } from '../components/home'
-import Carousel from '../components/home/Carousel'
-import Heading from '../components/home/heading'
+import { Welcome, Heading, Carousel } from '../components/home'
 import ProductRow from '../components/products/ProductRow'
 const Home = () => {
   return (
