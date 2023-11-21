@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { COLORS } from '../../constants';
 import { useNavigation } from "@react-navigation/native";
 
-const ProductCardView = () => {
+const ProductCardView = ({ item }) => {
    const navigation = useNavigation()
   return (
     <TouchableOpacity onPress={() => navigation.navigate('ProductsDetails')}>
@@ -13,7 +13,7 @@ const ProductCardView = () => {
         <View style={styles.imageContainer}>
           <Image
             source={{
-              uri: 'https://raw.githubusercontent.com/Harkanni/Furniture-images/main/fn5.jpg'
+              uri: item.image_url  
             }}
             style={styles.image}
           />
@@ -21,12 +21,12 @@ const ProductCardView = () => {
 
         <View style={styles.details}>
           <Text style={styles.title} numberOfLines={1}>
-            Product
+            {item.title}
           </Text>
           <Text style={styles.supplier} numberOfLines={1}>
-            Product
+            {item.supplier}
           </Text>
-          <Text style={styles.price}>$1234</Text>
+          <Text style={styles.price}>${item.price}</Text>
         </View>
 
         <TouchableOpacity style={styles.addBtn}>
@@ -37,4 +37,4 @@ const ProductCardView = () => {
   );
 };
 
-export default ProductCardView;
+export default React.memo(ProductCardView)
